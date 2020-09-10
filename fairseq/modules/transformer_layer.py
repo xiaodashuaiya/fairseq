@@ -39,7 +39,7 @@ class TransformerEncoderLayer(nn.Module):
         self.dropout_module = FairseqDropout(args.dropout, module_name=self.__class__.__name__)
         self.activation_fn = utils.get_activation_fn(
             activation=getattr(args, "activation_fn", "relu")
-        )
+        ) # relu/gelu/..
         activation_dropout_p = getattr(args, "activation_dropout", 0)
         if activation_dropout_p == 0:
             # for backwards compatibility with models that use args.relu_dropout
