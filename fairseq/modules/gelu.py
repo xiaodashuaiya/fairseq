@@ -23,3 +23,11 @@ def gelu_accurate(x):
 
 def gelu(x: torch.Tensor) -> torch.Tensor:
     return torch.nn.functional.gelu(x.float()).type_as(x)
+
+
+def sin(x):
+    return torch.sin(x)
+
+
+def swish(x):
+    return x*torch.sigmoid(x)

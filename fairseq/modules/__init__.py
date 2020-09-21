@@ -49,6 +49,8 @@ __all__ = [
     'Fp32LayerNorm',
     'gelu',
     'gelu_accurate',
+    'sin',
+    'swish',
     'GradMultiply',
     'GumbelVectorQuantizer',
     'KmeansVectorQuantizer',

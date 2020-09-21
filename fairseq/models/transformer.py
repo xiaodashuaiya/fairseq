@@ -436,6 +436,7 @@ class TransformerEncoder(FairseqEncoder):
         Returns:
             *encoder_out* rearranged according to *new_order*
         """
+
         """
         Since encoder_padding_mask and encoder_embedding are both of type
         Optional[Tensor] in EncoderOut, they need to be copied as local

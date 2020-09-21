@@ -19,7 +19,7 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 from fairseq.logging.meters import safe_round
-from fairseq.modules import gelu, gelu_accurate
+from fairseq.modules import gelu, gelu_accurate, sin, swish
 from fairseq.modules.multihead_attention import MultiheadAttention
 from torch import Tensor
 
@@ -438,6 +438,10 @@ def get_activation_fn(activation: str) -> Callable:
         return gelu_accurate
     elif activation == "gelu_accurate":
         return gelu_accurate
+    elif activation == 'sin':
+        return sin
+    elif activation == 'swish':
+        return swish
     elif activation == "tanh":
         return torch.tanh
     elif activation == "linear":
@@ -452,6 +456,8 @@ def get_available_activation_fns() -> List:
         "gelu",
         "gelu_fast",  # deprecated
         "gelu_accurate",
+        "sin",
+        "swish",
         "tanh",
         "linear",
     ]
